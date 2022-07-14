@@ -26,3 +26,4 @@ class ProjectConfig(Config):
     filemask_pre = 'src/locales/*/'
     new_base_pre = 'src/locales/zh-CN/'
     dir_path = '/project_slug/src/locales/zh-CN/'
+    language_code_style = 'bcp_long'
