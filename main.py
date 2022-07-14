@@ -12,6 +12,7 @@ E-mail: samzong.lu@gmail.com
 from fastapi import FastAPI
 
 import time
+import os
 
 from src.utils import get_files_from_dir, test_config
 from src.components import create_components
@@ -54,9 +55,16 @@ async def batch_create_components():
     language_code_style = ProjectConfig.language_code_style
 
     for file in get_files_from_dir(dir_path):
-        component_name = component_slug = file.rstrip('.json').replace('/', '_')
-        filemask = filemask_pre + file
-        new_base = new_base_pre + file
+        if os.platform == 'darwin':
+            component_name = component_slug = file.rstrip('.json').replace('\\', '_')
+            filemask = filemask_pre + file.replace('\\', '/')
+            new_base = new_base_pre + file.replace('\\', '/')
+        elif os.platform == 'win':
+            component_name = component_slug = file.rstrip('.json').replace('/', '_')
+            filemask = filemask_pre + file
+            new_base = new_base_pre + file
+        else:
+            return {"message": "no support system!"}
 
         print("components_name: ", component_name)
         print("components_slug: ", component_slug)
