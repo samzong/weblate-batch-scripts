@@ -51,6 +51,7 @@ async def batch_create_components():
     filemask_pre = ProjectConfig.filemask_pre
     new_base_pre = ProjectConfig.new_base_pre
     dir_path = ProjectConfig.dir_path
+    language_code_style = ProjectConfig.language_code_style
 
     for file in get_files_from_dir(dir_path):
         component_name = component_slug = file.rstrip('.json').replace('/', '_')
@@ -62,7 +63,7 @@ async def batch_create_components():
         print("filemask: ", filemask)
         print("new_base: ", new_base)
 
-        create_components(project_slug, repo, component_name, component_slug, filemask, new_base)
+        create_components(project_slug, repo, component_name, component_slug, filemask, new_base, language_code_style)
 
         # too hard. need sleep
         time.sleep(1)

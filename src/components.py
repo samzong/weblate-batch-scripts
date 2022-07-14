@@ -14,8 +14,8 @@ import json
 from config import DaoConfig
 
 
-def create_components(project_slug: str, repo: str, component_name: str, component_slug: str, filemask: str,
-                      new_base: str):
+def create_components(project_slug: str, repo: str, component_name: str, component_slug: str,
+                      filemask: str, new_base: str, language_code_style: str):
     url = DaoConfig.WEBLATE_API_URL + "/projects/{}/components/".format(project_slug)
 
     payload = json.dumps({
@@ -26,7 +26,8 @@ def create_components(project_slug: str, repo: str, component_name: str, compone
         "repo": repo,
         "template": "",
         "new_base": new_base,
-        "vcs": "git"
+        "vcs": "git",
+        "language_code_style": language_code_style
         })
 
     headers = {
@@ -36,6 +37,8 @@ def create_components(project_slug: str, repo: str, component_name: str, compone
         }
 
     response = requests.request("POST", url, headers=headers, data=payload, allow_redirects=False, timeout=10)
+
+    # print(response.json())
 
     return response.json()
 
