@@ -24,10 +24,16 @@ def create_components(project_slug: str, repo: str, component_name: str, compone
         "name": component_name,
         "slug": component_slug,
         "repo": repo,
-        "template": "",
-        "new_base": new_base,
+        "template": new_base,
+        "new_base": "",  # new_base make null
         "vcs": "git",
-        "language_code_style": language_code_style
+        "language_code_style": language_code_style,
+
+        # add zh-CN source language
+        "source_language": {
+            "code": "zh-CN",
+            "name": "中文(zh-CN)",
+            },
         })
 
     headers = {
