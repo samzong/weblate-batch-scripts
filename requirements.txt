@@ -1,14 +1,17 @@
-anyio @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/0c/d5/43/4fc9337721753aedb8e75e6c2472ed6d6a77abfca1ed6c854192e770b3/anyio-3.6.1-py3-none-any.whl
-certifi @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/b0/0d/df/4aa04d9b421fc5f1438b55d4b37516d21ef0ba40158bf7f9dfb28122ca/certifi-2022.6.15-py3-none-any.whl
-charset-normalizer @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/bf/59/3f/6838dadc818c6595ae4a00c31af0da89039c1eaa370871d38072845e8d/charset_normalizer-2.1.0-py3-none-any.whl
-click @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/9d/ca/2f/bc3cc4a294e96f355d01d24ac6fefdde4c6286f9f63b7ce1c91d5f0c22/click-8.1.3-py3-none-any.whl
-fastapi @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/b5/d8/ae/dd7b1c9ec275325325fadd60454229e163689d7c184a7192129a59b756/fastapi-0.78.0-py3-none-any.whl
-h11 @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/b8/da/55/44ffe0c74acbcaf35e29031794ef40115a51cc80bf443005d45c5f58db/h11-0.13.0-py3-none-any.whl
-idna @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/d5/04/80/9c17fd3240a37d12ff2ef042b0306aeb1abd2d8b95f150fd60be938352/idna-3.3-py3-none-any.whl
-pydantic @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/6d/b6/31/1ad00a25d50da1a8f48ecb32aa6f59e4eb7321d791f92887597686b461/pydantic-1.9.1-cp39-cp39-macosx_11_0_arm64.whl
-requests @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/96/68/40/1b2019f1ca6a6d07b2a3107daab4dca1e11111be3af28a435f7cd0463a/requests-2.28.1-py3-none-any.whl
-sniffio @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/d5/26/da/4c1b03b71c2d3fdf83bb7c73a0ddb8cf8071e4633d6d1193909c780cc2/sniffio-1.2.0-py3-none-any.whl
-starlette @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/6c/6a/3c/4895203ef83a8bc6a3a4219d78503f5592e165e5ac2b9a959571fdb3bb/starlette-0.19.1-py3-none-any.whl
-typing_extensions @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/c7/a2/3c/b8e5224a09b65b04693c613a52a41d6161affcaca091fbb647520b186c/typing_extensions-4.3.0-py3-none-any.whl
-urllib3 @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/fb/d7/ea/afeac748fa6a875802b02d2f5f9375bd0154a9bb765a0181f43e283b0e/urllib3-1.26.10-py2.py3-none-any.whl
-uvicorn @ file:///Users/samzonglu/Library/Caches/pypoetry/artifacts/38/09/c8/6004b5a20aa793b51a56185e7b4be54de6a669239e8142963ce1a7cb2d/uvicorn-0.18.2-py3-none-any.whl
+anyio==3.6.1
+certifi==2022.6.15
+charset-normalizer==2.1.0
+click==8.1.3
+fastapi==0.78.0
+h11==0.13.0
+idna==3.3
+pip==22.2
+pydantic==1.9.1
+requests==2.28.1
+setuptools==62.6.0
+sniffio==1.2.0
+starlette==0.19.1
+typing_extensions==4.3.0
+urllib3==1.26.10
+uvicorn==0.18.2
+wheel==0.37.1
