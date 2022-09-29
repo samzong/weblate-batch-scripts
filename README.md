@@ -24,3 +24,9 @@
 
 - 确认配置是否生效  http://127.0.0.1:8000/test_config
 - 执行批量添加     http://127.0.0.1:8000/batch_create_components
+
+
+### Feature
+
+- 支持网页输入代码仓库
+- 支持自动上传
