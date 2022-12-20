@@ -1,0 +1,12 @@
+{
+  "kairship-ui": {
+    "project_name": "kairship-ui",
+    "project_id": "1585",
+    "branch_name": "master"
+  },
+  "skoala-ui": {
+    "project_name": "skoala-ui",
+    "project_id": "1585",
+    "branch_name": "master"
+  }
+}

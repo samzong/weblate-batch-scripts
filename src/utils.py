@@ -11,7 +11,7 @@ E-mail: samzong.lu@gmail.com
 import logging
 import os
 import requests
-from config import DaoConfig
+from config import Config
 
 
 def get_files_from_dir(dir_path: str):
@@ -28,9 +28,9 @@ def get_files_from_dir(dir_path: str):
 
 
 def test_config():
-    url = DaoConfig.WEBLATE_API_URL + '/'
+    url = Config.WEBLATE_API_URL + '/'
     headers = {
-        "Authorization": DaoConfig.WEBLATE_API_TOKEN,
+        "Authorization": Config.WEBLATE_API_TOKEN,
         "Accept": "application/json, text/javascript",
         "Content-Type": "application/json"
         }
