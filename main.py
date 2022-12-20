@@ -135,7 +135,7 @@ async def create_common_component(request: Request, project_id: int):
 
 
 @app.get("/project_info/create_all_components/{project_id}")
-async def create_all_components(request: Request, project_id: int):
+async def create_components(request: Request, project_id: int):
     project_name = get_project_name(project_id)
     repo_path = os.path.abspath(os.path.join('cache_repo/', project_name))
 
@@ -145,22 +145,22 @@ async def create_all_components(request: Request, project_id: int):
             "project_id": project_id,
             "project_name": project_name,
             "message": "项目代码目前没有 Clone，请先点击 Clone 代码 到本地"
-
             }
 
         return templates.TemplateResponse(name="project_info.html", context=data)
 
+    current_path = os.getcwd()
     batch_create_components(
         project_slug=project_name,
         repo_path=os.path.join(repo_path, "src/locales/zh-CN/")
         )
+    os.chdir(current_path)
 
     data = {
         "request": request,
         "project_id": project_id,
         "project_name": project_name,
-        "message": "所有组件创建成功"
-
+        "message": "恭喜你，全部部件已经创建完成，快回到首页去进行翻译吧。"
         }
 
     return templates.TemplateResponse(name="project_info.html", context=data)
