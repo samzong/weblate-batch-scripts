@@ -22,6 +22,10 @@ GITLAB_PERSON_TOKEN = ''
 GITLAB_CLONE_URL = "https://oauth2:xxxxxxxxxx@gitlab."
 ```
 
+## 使用 docker 的方式运行
+
+使用 Dockerfile 自行编译
+
 ## v0.2
 
 - 支持根据一个前端仓库地址，自动化创建项目并同步所有组件
