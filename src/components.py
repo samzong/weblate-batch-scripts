@@ -20,6 +20,18 @@ from src.utils import get_files_from_dir
 wb = wlc.Weblate(key=Config.WEBLATE_API_TOKEN, url=Config.WEBLATE_API_URL)
 
 
+def add_component_addon(project, component):
+    """
+    - weblate.json.customize
+    """
+    json_addon_name = "weblate.json.customize"
+    json_addon_configuration = {"sort_keys": False, "indent": 2, "style": "spaces"}
+
+    resp = wb.post(path="components/{}/{}/addons/".format(project, component), name=json_addon_name,
+                   configuration=json_addon_configuration)
+    logging.info(resp)
+
+
 def find_components(project_slug: str, component_slug: str):
     url = Config.WEBLATE_API_URL + "/components/{}/{}/".format(project_slug, component_slug)
     headers = {
@@ -62,6 +74,7 @@ def create_first_component(project_slug, repo_url):
                             source_language=source_language,
                             language_code_style=language_code_style
                             )
+        add_component_addon(project_slug, slug)
         logging.info("create first component success")
     except Exception as e:
         return e
@@ -132,8 +145,11 @@ def batch_create_components(project_slug, repo_path):
                                 filemask=filemask, template=template, file_format=file_format, vcs=vcs,
                                 language_code_style=language_code_style, source_language=source_language)
 
+            add_component_addon(project_slug, component_slug)
+
             print("Successfully to create component {}".format(component_name))
             time.sleep(0.2)
+
         except Exception as e:
             logging.error("Failed to create component {}".format(component_name))
 
