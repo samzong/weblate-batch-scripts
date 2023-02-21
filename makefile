@@ -12,4 +12,7 @@ help:
 serve:
 	uvicorn main:app --reload
 
+build:
+	docker build -t samzong/weblate-batch-scripts:latest .
+
 .PHONY: serve help
