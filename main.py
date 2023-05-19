@@ -11,6 +11,7 @@ E-mail: samzong.lu@gmail.com
 import logging
 import os
 import shutil
+import json
 
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
@@ -28,20 +29,26 @@ app = FastAPI(
         "name": "samzong",
         "url": "https://github.com/samzong",
         "email": "samzong.lu@gmail.com",
-        },
+    },
     license_info={
         "name": "Apache 2.0",
         "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
-        }
-    )
+    }
+)
 
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/", response_class=HTMLResponse)
-async def root():
-    html_content = open("templates/home.html", 'r').read()
-    return HTMLResponse(content=html_content, status_code=200)
+# @app.get("/", response_class=HTMLResponse)
+# async def root():
+#     html_content = open("templates/home.html", 'r').read()
+#     return HTMLResponse(content=html_content, status_code=200)
+
+@app.get("/")
+async def index(request: Request):
+    with open('/code/data/projects.json', 'r') as f:
+        data = json.load(f)
+    return templates.TemplateResponse("index.html", {"request": request, "data": data})
 
 
 @app.get("/project_info/{project_id}")
@@ -56,7 +63,7 @@ async def project_info(request: Request, project_id: int):
             "project_name": project_name,
             "message": "Project info {}".format(project_url)
 
-            }
+        }
 
         return templates.TemplateResponse(name="project_info.html", context=data)
     except Exception as e:
@@ -67,7 +74,7 @@ async def project_info(request: Request, project_id: int):
             "project_name": None,
             "message": "404 Project Not Found"
 
-            }
+        }
         return templates.TemplateResponse(name="project_info.html", context=data)
 
 
@@ -84,7 +91,7 @@ async def create_wb_branch(request: Request, project_id: int):
             "project_name": project_name,
             "message": "项目 weblate 分支创建成功"
 
-            }
+        }
 
         return templates.TemplateResponse(name="project_info.html", context=data)
     else:
@@ -94,7 +101,7 @@ async def create_wb_branch(request: Request, project_id: int):
             "project_name": project_name,
             "message": "项目 weblate 分支仍旧存在，请确认已完成合并后,删除分支,再次尝试刷新项目"
 
-            }
+        }
 
         return templates.TemplateResponse(name="project_info.html", context=data)
 
@@ -111,7 +118,7 @@ async def clone_wb_project(request: Request, project_id: int):
         "project_name": project_name,
         "message": "Clone 项目成功，路径在 {}".format({repo_path})
 
-        }
+    }
 
     return templates.TemplateResponse(name="project_info.html", context=data)
 
@@ -129,7 +136,7 @@ async def create_common_component(request: Request, project_id: int):
         "project_name": project_name,
         "message": "Common component 创建成功，现在可以创建其他组件"
 
-        }
+    }
 
     return templates.TemplateResponse(name="project_info.html", context=data)
 
@@ -145,7 +152,7 @@ async def create_components(request: Request, project_id: int):
             "project_id": project_id,
             "project_name": project_name,
             "message": "项目代码目前没有 Clone，请先点击 Clone 代码 到本地"
-            }
+        }
 
         return templates.TemplateResponse(name="project_info.html", context=data)
 
@@ -153,7 +160,7 @@ async def create_components(request: Request, project_id: int):
     batch_create_components(
         project_slug=project_name,
         repo_path=os.path.join(repo_path, "src/locales/zh-CN/")
-        )
+    )
     os.chdir(current_path)
 
     data = {
@@ -161,7 +168,7 @@ async def create_components(request: Request, project_id: int):
         "project_id": project_id,
         "project_name": project_name,
         "message": "恭喜你，全部部件已经创建完成，快回到首页去进行翻译吧。"
-        }
+    }
 
     return templates.TemplateResponse(name="project_info.html", context=data)
 
@@ -179,7 +186,7 @@ async def wb_project(request: Request, project_id: int):
         "project_name": project_name,
         "message": "weblate 项目创建成功，使用 gitlab 项目名称作为 web 项目名称\n{}".format(resp)
 
-        }
+    }
 
     return templates.TemplateResponse(name="project_info.html", context=data)
 
@@ -196,6 +203,6 @@ async def remove_clone_file(request: Request, project_id: int):
         "project_name": project_name,
         "message": "{}".format(resp)
 
-        }
+    }
 
     return templates.TemplateResponse(name="project_info.html", context=data)

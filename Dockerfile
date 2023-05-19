@@ -1,16 +1,17 @@
-FROM python:3.9-slim-buster
+FROM python:3.9.16-alpine3.18
 
 WORKDIR /code
 
+COPY requirements.txt /code/
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
+    && apk add --no-cache git \
+     && pip install --no-cache-dir --upgrade -r /code/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple \
+     && rm -rf /var/cache/apk/*
+
 COPY . /code/
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
-
-RUN sed -i 's#http://deb.debian.org#https://mirrors.163.com#g' /etc/apt/sources.list \
-  && apt-get update \
-  && apt-get install -y --no-install-recommends git \
-  && apt-get purge -y --auto-remove \
-  && rm -rf /var/lib/apt/lists/*
+ENV WEB_CONCURRENCY=2
 
 EXPOSE 8888
 

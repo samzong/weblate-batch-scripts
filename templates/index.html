@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weblate Homepage</title>
+</head>
+<style type="text/css">
+    table {
+        font-family: verdana, arial, sans-serif;
+        font-size: 15px;
+        color: #333333;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+
+    table th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        color: #0099FF;
+        font-size: 16px;
+    }
+
+    table td {
+        border-width: 1px;
+        padding: 8px;
+        width: 200px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #FFFFFF;
+        color: black;
+        font-size: 16px;
+        text-align: center;
+    }
+</style>
+<body>
+
+<h1 style="text-align: center;">DCE5 前端翻译进度</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Project</th>
+            <th>Project Id</th>
+            <th>Translate Badges</th>
+            <th>Git repo</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for project in data.values() %}
+            <tr>
+                <td>{{ project['project_name'] }}</td>
+                <td>{{ project['project_id'] }}</td>
+                <td>
+                    <a href="{{ project['weblate_url'] }}"><img src="{{ project['translate_badges_icon'] }}" alt="翻译状态"/></a>
+                </td>
+                <td>
+                    <a href="{{ project['gitlab_url'] }}">GitLab Repo</a>
+                </td>
+                <td>
+                    <a href="/project_info/{{ project['project_id'] }}"><button>0.项目信息</button></a>
+                    <a href="/project_info/create_branch/{{ project['project_id'] }}"><button>1.Git 增加 Weblate 分支</button></a>
+                    <a href="/project_info/create_wb_project/{{ project['project_id'] }}"><button>2. 创建 Weblate 项目</button></a>
+                    <a href="/project_info/create_common_component/{{ project['project_id'] }}"><button>3. 创建 Common 部件</button></a>
+                    <a href="/project_info/clone_project/{{ project['project_id'] }}"><button>4. Clone 项目到本地</button></a>
+                    <a href="/project_info/create_all_components/{{ project['project_id'] }}"><button>5. 创建全部部件</button></a>
+                    <a href="/project_info/remove_clone_file/{{ project['project_id'] }}"><button>6. 移除 Clone 项目</button></a>
+                </td> 
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

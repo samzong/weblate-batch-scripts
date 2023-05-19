@@ -148,7 +148,7 @@ def batch_create_components(project_slug, repo_path):
             add_component_addon(project_slug, component_slug)
 
             print("Successfully to create component {}".format(component_name))
-            time.sleep(0.2)
+            time.sleep(0.1)
 
         except Exception as e:
             logging.error("Failed to create component {}".format(component_name))
