@@ -1,4 +1,28 @@
 {
+  "insight-ui": {
+    "project_name": "insight-ui",
+    "project_id": "975",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/insight-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/insight-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/insight-ui/"
+  },
+  "kpanda-ui": {
+    "project_name": "kpanda-ui",
+    "project_id": "941",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/kpanda-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/kpanda-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/kpanda-ui/"
+  },
+  "mspider-ui": {
+    "project_name": "mspider-ui",
+    "project_id": "1059",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/mspider-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/mspider-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/mspider-ui/"
+  },
   "skoala-ui": {
     "project_name": "skoala-ui",
     "project_id": "1120",
@@ -6,5 +30,101 @@
     "weblate_url": "http://10.6.229.10:8080/engage/skoala-ui/",
     "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/skoala-ui.svg",
     "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/skoala-ui/"
+  },
+  "amamba-ui": {
+    "project_name": "amamba-ui",
+    "project_id": "1279",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/amamba-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/amamba-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/amamba-ui/"
+  },
+  "mcamel-rabbitmq-ui": {
+    "project_name": "mcamel-rabbitmq-ui",
+    "project_id": "1330",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/mcamel-rabbitmq-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/mcamel-rabbitmq-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/mcamel-rabbitmq-ui/"
+  },
+  "mcamel-elasticsearch-ui": {
+    "project_name": "mcamel-elasticsearch-ui",
+    "project_id": "1523",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/mcamel-elasticsearch-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/mcamel-elasticsearch-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/mcamel-elasticsearch-ui/"
+  },
+  "kairship-ui": {
+    "project_name": "kairship-ui",
+    "project_id": "1585",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/kairship-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/kairship-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/kairship-ui/"
+  },
+  "mcamel-redis-ui": {
+    "project_name": "mcamel-redis-ui",
+    "project_id": "1649",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/mcamel-redis-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/mcamel-redis-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/mcamel-redis-ui/"
+  },
+  "mcamel-mysql-ui": {
+    "project_name": "mcamel-mysql-ui",
+    "project_id": "1608",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/mcamel-mysql-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/mcamel-mysql-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/mcamel-mysql-ui/"
+  },
+  "mcamel-kafka-ui": {
+    "project_name": "mcamel-kafka-ui",
+    "project_id": "1747",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/mcamel-kafka-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/mcamel-kafka-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/mcamel-kafka-ui/"
+  },
+  "kangaroo-ui": {
+    "project_name": "kangaroo-ui",
+    "project_id": "1767",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/kangaroo-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/kangaroo-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/kangaroo-ui/"
+  },
+  "mcamel-minio-ui": {
+    "project_name": "mcamel-minio-ui",
+    "project_id": "1805",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/mcamel-minio-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/mcamel-minio-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/mcamel-minio-ui/"
+  },
+  "kcoral-ui": {
+    "project_name": "kcoral-ui",
+    "project_id": "1887",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/kcoral-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/kcoral-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/kcoral-ui/"
+  },
+  "kcollie-ui": {
+    "project_name": "kcollie-ui",
+    "project_id": "2039",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/kcollie-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/kcollie-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/kcollie-ui/"
+  },
+  "dowl-ui": {
+    "project_name": "dowl-ui",
+    "project_id": "2139",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/dowl-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/dowl-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/dowl-ui/"
   }
 }

@@ -22,6 +22,19 @@ GITLAB_PERSON_TOKEN = ''
 GITLAB_CLONE_URL = "https://oauth2:xxxxxxxxxx@gitlab."
 ```
 
+## run in k8s
+
+提供了模板配置文件 [run_in_k8s.yaml](run_in_k8s.yaml)，直接 apply yaml 文件，即可完成应用的部署.
+
+```bash
+kubectl -n your_namespace apply -f run_in_k8s.yaml
+```
+
+> 增加新的 project ，**本次最大的更新部分**，只需要更新 configmap 即可完成项目更新
+
+1. 修改 ConfigMap weblate-projects，完成配置文件更新 `kubectl edit cm weblate-projects`
+2. 重启 weblate-batch-scripts pod，完成项目更新 `kubectl rollout restart deployment weblate-batch-scripts`
+
 ## 使用 docker 的方式运行
 
 使用 Dockerfile 自行编译
@@ -57,8 +70,8 @@ GITLAB_CLONE_URL = "https://oauth2:xxxxxxxxxx@gitlab."
 
 ### Web
 
-- 确认配置是否生效  http://127.0.0.1:8000/test_config
-- 执行批量添加     http://127.0.0.1:8000/batch_create_components
+- 确认配置是否生效  <http://127.0.0.1:8000/test_config>
+- 执行批量添加     <http://127.0.0.1:8000/batch_create_components>
 
 ### Feature
 
