@@ -16,6 +16,9 @@ help:
 build:
 	docker build -t samzong/weblate-batch-scripts:latest .
 
+build-release:
+	docker build --push -t release.daocloud.io/ndx-product/weblate-batch-scripts:latest .
+
 stop:
 	docker container rm -f ${CONTAINER_NAME}
 
@@ -23,4 +26,4 @@ start:
 	docker run -d --name ${CONTAINER_NAME} -p 8888:8888 samzong/weblate-batch-scripts:latest
 	echo "Visit: http://127.0.0.1:8888"
 
-.PHONY: build stop start help
+.PHONY: build build-release stop start help

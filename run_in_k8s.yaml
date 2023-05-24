@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weblate-batch-scripts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weblate-batch-scripts
+  template:
+    metadata:
+      labels:
+        app: weblate-batch-scripts
+    spec:
+      containers:
+      - name: weblate-batch-scripts
+        image: release.daocloud.io/ndx-product/weblate-batch-scripts:v0.1.0
+        volumeMounts:
+        - name: projects-file
+          mountPath: /code/data/projects.json
+          subPath: projects.json
+        ports:
+        - containerPort: 8888
+        env:
+        - name: PROJECTS_FILE_PATH
+          value: "/code/data/projects.json"
+      volumes:
+      - name: projects-file
+        configMap:
+          name: weblate-projects
+          items:
+          - key: projects.json
+            path: projects.json
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: weblate-batch-scripts
+spec:
+  type: NodePort
+  selector:
+    app: weblate-batch-scripts
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8888
+      targetPort: 8888
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: weblate-projects
+data:
+  projects.json: |-
+    {
+      "skoala-ui": {
+        "project_name": "skoala-ui",
+        "project_id": "1120",
+        "branch_name": "master",
+        "weblate_url": "http://10.6.229.10:8080/engage/skoala-ui/",
+        "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/skoala-ui.svg",
+        "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/skoala-ui/"
+      }
+    }
