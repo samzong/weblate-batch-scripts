@@ -126,5 +126,13 @@
     "weblate_url": "http://10.6.229.10:8080/engage/dowl-ui/",
     "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/dowl-ui.svg",
     "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/dowl-ui/"
+  },
+  "virnest-ui": {
+    "project_name": "virtnest-ui",
+    "project_id": "2195",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/virtnest-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/virtnest-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/virtnest-ui/"
   }
 }
