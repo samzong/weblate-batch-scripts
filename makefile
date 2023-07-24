@@ -13,6 +13,9 @@ help:
 	@echo "版本: 1.1.0"
 	@echo
 
+pull:
+	git pull origin main
+
 build:
 	docker build -t samzong/weblate-batch-scripts:latest .
 
