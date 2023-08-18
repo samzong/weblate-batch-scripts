@@ -134,5 +134,13 @@
     "weblate_url": "http://10.6.229.10:8080/engage/virtnest-ui/",
     "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/virtnest-ui.svg",
     "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/virtnest-ui/"
+  },
+  "spidernet-ui": {
+    "project_name": "spidernet-ui",
+    "project_id": "1794",
+    "branch_name": "master",
+    "weblate_url": "http://10.6.229.10:8080/engage/spidernet-ui/",
+    "translate_badges_icon": "https://ndx.gitpages.daocloud.io/product/frontend-i18n-counter/badges/spidernet-ui.svg",
+    "gitlab_url": "https://gitlab.daocloud.cn/ndx/frontend-engineering/spidernet-ui/"
   }
 }
